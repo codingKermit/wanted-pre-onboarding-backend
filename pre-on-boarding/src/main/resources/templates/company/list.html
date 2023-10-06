@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<div style="width: 100%; display: flex; margin-bottom: 1rem;">
+			<div style="margin-left: auto;">
+				<form action="/company/list">
+					<input type="text" name="keyword" id="keyword">
+					<button type="submit">검색</button>
+				</form>
+			</div>
+		</div>
+		<table border="1" style="width: 100%; margin-bottom: 1rem;">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>공고 제목</th>
+					<th>채용 기업</th>
+					<th>공고 내용</th>
+					<th>채용포지션</th>
+					<th>채용보상금</th>
+					<th>사용기술</th>
+					<th>국가</th>
+					<th>지역</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="post : ${posts}" th:onclick="|location.href='/post/${post.postNum}'|">
+					<td th:text="${post.postNum}"></td>
+					<td th:text="${post.title}"></td>
+					<td th:text="${post.companyName}"></td>
+					<td th:text="${post.content}"></td>
+					<td th:text="${post.position}"></td>
+					<td th:text="${post.reward}"></td>
+					<td th:text="${post.skill}"></td>
+					<td th:text="${post.country}"></td>
+					<td th:text="${post.legion}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="text-align: center;">
+			<button type="button" th:onclick="|history.back()|"><h4>돌아가기</h4></button>
+		</div>
+	</div>
+</body>
+</html>

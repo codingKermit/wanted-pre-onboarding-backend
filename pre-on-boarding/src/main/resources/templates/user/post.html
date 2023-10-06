@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div>
+		<div>
+			<label for="title">공고 제목</label><br>
+			<input id="title" readonly="readonly" th:value="${post.title}">
+		</div>
+		<div>
+			<label for="companyName">공고 기업</label><br>
+			<input id="companyName" readonly="readonly" th:value="${post.companyName}">
+		</div>
+		<div>
+			<label for="position">채용 포지션</label>
+			<br><input id="position" readonly="readonly" th:value="${post.position}">
+		</div>
+		<div>
+			<label for="reward">채용 보상금</label>
+			<br><input id="reward" readonly="readonly" th:value="${post.reward}">
+		</div>
+		<div>
+			<label for="skill">사용 스킬</label>
+			<br><input id="skill" readonly="readonly" th:value="${post.skill}">
+		</div>
+		<div>
+			<label for="country">나라</label>
+			<br><input id="country" readonly="readonly" th:value="${post.country}">
+		</div>
+		<div>
+			<label for="legion">지역</label>
+			<br><input id="legion" readonly="readonly" th:value="${post.legion}">
+		</div>
+		<div>
+			<label for="content">공고 내용</label><br>
+			<textarea name="content" rows="30" cols="100" th:text="${post.content}"></textarea>
+		</div>
+		<div>
+			<button>지원하기</button>
+			<button type="button" th:onclick="|history.back()|">돌아가기</button>
+		</div>
+	</div>
+</body>
+</html>

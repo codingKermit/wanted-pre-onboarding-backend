@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>홈페이지</title>
+</head>
+<body>
+	<div style="display: flex; justify-content: center; align-items: center; height: 100vh">
+		<div>
+			<h1>유형을 골라주세요</h1>
+			<h5>공고 조회, 검색은 어디서든 가능합니다</h5>
+			<div style="text-align: center;">
+				<button th:onclick="|location.href='@{/company/login}'|"><h4>기업 회원</h4></button>
+				<button th:onclick="|location.href='@{/user/login}'|"><h4>개인 회원</h4></button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

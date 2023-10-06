@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="display: flex; justify-content: center; align-items: center; height: 100vh">
+		<form action="/company/update" method="post">
+				<input th:value="${post.companyName}" name="companyName" type="hidden">
+				<input th:value="${post.postNum}" name="postNum" type="hidden">
+		<table>
+			<tr>
+				<td>
+					<label for="title">제목</label>
+				</td>
+				<td>
+					<input th:value="${post.title}" id="title" type="text" name="title" placeholder="제목 입력" required="required">
+				</td>
+				<td>
+					<label for="country">국가</label>
+				</td>
+				<td>
+					<input th:value="${post.country}"  id="country" type="text" name="country" placeholder="국가 입력" required="required">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="position">채용 포지션</label>
+				</td>
+				<td>
+					<input th:value="${post.position}" id="position" type="text" name="position" placeholder="채용 포지션 입력" required="required">
+				</td>
+				<td>
+					<label for="legion">지역</label>
+				</td>
+				<td>
+					<input th:value="${post.legion}" id="legion" type="text" name="legion" placeholder="지역 입력" required="required">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="reward">채용 보상금</label>
+				</td>
+				<td>
+					<input th:value="${post.reward}" id="reward" type="number" name="reward" placeholder="채용 보상금" required="required">
+				</td>
+				<td>
+					<label for="skill">사용 스킬</label>
+				</td>
+				<td>
+					<input th:value="${post.skill}" id="skill" type="text" name="skill" placeholder="사용 기술" required="required">
+				</td>
+			</tr>
+		</table>
+			<div>
+			<div>
+				<label for="content">내용</label>
+			</div>
+				<textarea th:text="${post.content}" id="content" cols="100" rows="30" name="content" placeholder="내용 입력" required="required"></textarea>
+			</div>
+			<div style="text-align: center;">
+				<button type="submit"><h1>저장</h1></button>
+				<button type="reset"><h1>취소</h1></button>
+				<button type="button" th:onclick="|history.back()|"><h1>돌아가기</h1></button>
+			</div>
+		</form>
+		</div>
+</body>
+</html>
